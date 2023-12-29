@@ -1,0 +1,72 @@
+.navbarMainBox{
+  background:#f0f5fe;
+  padding:0.7rem 0rem;
+}
+.navbarMainBox div{
+  justify-content:space-between;
+/* margin:auto ; */
+align-items:center;
+}
+
+.navbarMainBox ul{
+  list-style:none;
+  display:flex;
+  color:white;
+}
+.navbarMainBox ul li {
+  margin-right:1rem;
+}
+.item{
+  text-decoration: none;
+  color: #394f6a;
+  font-size: 1.1rem;
+}
+
+.end a{
+  text-decoration: none;
+    color: #021431;
+    position: relative;
+    font-size:2rem;
+    margin-top:1rem;
+
+}
+
+.end a span{
+  bottom: 19px;
+  position: absolute;
+  left: 25px;
+  background: #1478f6;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  color: white !imporant;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+}
+.end svg{
+  font-size:1.8rem;
+}
+
+.amountNavbar{
+  color:white;
+  font-size:1.4rem;
+
+}
+
+.leftLogo a{
+    text-decoration:none;
+    background: #1478f6;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    border-radius: 10px;
+
+
+}
+
+

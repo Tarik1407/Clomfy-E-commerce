@@ -1,0 +1,31 @@
+.mainBoxLogin{
+  text-align:center;
+}
+.formBox{
+  padding: 4rem 5rem !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    width: 22rem;
+    margin-top: 7rem !important;
+    text-align: center;
+}
+
+.registerLink{
+  font-size:1rem;
+  color: #323232;
+  font-weight:700;
+  
+}
+
+.linkRegister{
+  text-decoration:none;
+  color:#2076d2;
+  margin-left:1rem;
+}
+
+.header{
+  font-weight: 700;
+    color: #323232;
+    text-transform: uppercase;
+    margin-bottom: 2rem !important; 
+}

@@ -1,0 +1,19 @@
+.firstLinkLogin{
+  margin-right:3rem;
+}
+
+.headerMainBox{
+  background: #021431;
+    padding: 1rem 0rem;
+}
+
+
+.headerMainBox a{
+  text-decoration:none;
+  color:#c8c3ca;
+  font-size:1.2rem;
+}
+.headerMainBox a:hover{
+  text-decoration:underline;
+
+}

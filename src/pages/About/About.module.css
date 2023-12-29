@@ -1,0 +1,24 @@
+.mainBoxAbout{
+  text-align: left;
+    margin-top: 4rem;
+}
+.mainBoxAbout h1{
+  color: #394f6a;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight:700;
+    text-align:center;
+}
+.mainBoxAbout h1 span{
+  background: #1478f6;
+    color: white;
+    padding: 1rem 1rem;
+    border-radius: 17px;
+    font-size: 3rem;
+}
+.mainBoxAbout p {
+  width: 60%;
+    margin: auto;
+    font-size: 1.2rem;
+    color: #394f6a;
+}

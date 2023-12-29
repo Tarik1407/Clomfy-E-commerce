@@ -1,0 +1,24 @@
+.textLandingBox h2{
+  color:#394f6a;
+  font-weight:700;
+  margin-top:5rem;
+}
+
+.textLandingBox p {
+  color:#394f6a;
+  font-size:1.4rem;
+}
+.textLandingBox a {
+  text-decoration:none;
+  color:white;
+  padding:0.8rem 0rem;
+
+}
+
+.textLandingBox button {
+  border-radius:10px;
+}
+.carouselBox{
+    margin-top: 5rem;
+
+}
