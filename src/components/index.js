@@ -6,6 +6,7 @@ import Navbar from "./Navbar/Navbar";
 import NavBarItem from "./Navbar/NavBarItem";
 import ErrorElement from "./Error/ErrorElement";
 import Hero from "./HeroComp/Hero";
+import BreadCumbsComponent from "./Breadcrumbs/BreadCumbsComponent";
 
 export {
   FormInput,
@@ -16,4 +17,5 @@ export {
   NavBarItem,
   ErrorElement,
   Hero,
+  BreadCumbsComponent,
 };

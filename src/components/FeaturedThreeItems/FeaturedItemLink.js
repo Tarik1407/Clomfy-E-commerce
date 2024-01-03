@@ -8,7 +8,7 @@ import {
   Grid,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { formatPrice } from "../../utilis/helpers";
+import { formatPrice } from "../../utilis";
 const FeaturedItemLink = (data) => {
   const { id } = data;
   const { title, price, image } = data.attributes;
