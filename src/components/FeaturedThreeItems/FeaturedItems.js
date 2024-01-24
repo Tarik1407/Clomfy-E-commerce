@@ -6,8 +6,9 @@ import { useLoaderData } from "react-router-dom";
 const FeaturedItems = () => {
   const { products } = useLoaderData();
 
+
   return (
-    <Box sx={{ marginTop: "5rem" }}>
+    <Box sx={{ marginTop: "2rem" }}>
       <Typography
         sx={{
           borderBottom: "5px solid #2076d2",

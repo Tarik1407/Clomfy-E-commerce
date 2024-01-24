@@ -24,3 +24,7 @@ text-transform: capitalize;
 .mainBoxSingleProduct p {
   color:#394f6a;
 }
+
+.active{
+  border:3px solid black;
+}

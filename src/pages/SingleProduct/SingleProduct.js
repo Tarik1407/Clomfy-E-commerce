@@ -7,10 +7,9 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem,
 } from "@mui/material";
 import { useLoaderData } from "react-router-dom";
-import { customFetch, formatPrice } from "../../utilis";
+import { customFetch, formatPrice, generateAmountOptions } from "../../utilis";
 import styled from "./SingleProduct.module.css";
 import { BreadCumbsComponent } from "../../components";
 export const loaderItem = async ({ params }) => {
@@ -21,13 +20,14 @@ export const loaderItem = async ({ params }) => {
 
 const SingleProduct = () => {
   const { singleDataItem } = useLoaderData();
-  const [amount, setAmount] = useState("");
-
+  const [amount, setAmount] = useState(1);
   const handleChange = (event) => {
     setAmount(event.target.value);
   };
   const { title, company, description, image, price, colors } =
     singleDataItem.attributes;
+
+  const [productsColor, setProductsColors] = useState(colors[0]);
 
   return (
     <Grid className={styled.mainBoxSingleProduct} container spacing={4}>
@@ -54,19 +54,36 @@ const SingleProduct = () => {
           {formatPrice(price)}
         </Typography>
         <Typography variant="h5">{description}</Typography>
+        <Typography sx={{ margin: "1rem 0rem" }} variant="h5">
+          Colors
+        </Typography>
+        <Box sx={{ display: "flex" }}>
+          {colors.map((item) => (
+            <Box
+              key={item}
+              sx={{
+                backgroundColor: item,
+                height: "30px",
+                width: "30px",
+                borderRadius: "50%",
+                marginRight: "0.8rem",
+                cursor: "pointer",
+              }}
+              className={`${item === productsColor ? styled.active : ""}`}
+              onClick={() => setProductsColors(item)}
+            />
+          ))}
+        </Box>
         <Box component="div">
           <FormControl fullWidth sx={{ margin: "1rem 0rem" }}>
             <InputLabel id="demo-simple-select-label">Amount</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
+              id="amount"
               value={amount}
-              label="Age"
+              label="amount"
               onChange={handleChange}
             >
-              <MenuItem value={1}>1</MenuItem>
-              <MenuItem value={2}>2</MenuItem>
-              <MenuItem value={3}>3</MenuItem>
+              {generateAmountOptions(20)}
             </Select>
           </FormControl>
         </Box>

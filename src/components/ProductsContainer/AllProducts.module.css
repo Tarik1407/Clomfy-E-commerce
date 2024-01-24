@@ -1,0 +1,25 @@
+.allProductsListHeader{
+  display:flex;
+  justify-content:space-between;
+  margin:1.4rem 0rem;
+  border-bottom: 2px solid #1478f6 ;
+}
+
+.allProductsHeader p {
+color: #323232;
+}
+
+.itemsLinksList{
+  display: flex;
+    justify-content: space-between;
+}
+
+.itemsLinksList a {
+  width:350px;
+}
+
+.itemLinkList{
+  display: flex;
+    align-items: center;
+}
+

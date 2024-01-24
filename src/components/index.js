@@ -7,6 +7,9 @@ import NavBarItem from "./Navbar/NavBarItem";
 import ErrorElement from "./Error/ErrorElement";
 import Hero from "./HeroComp/Hero";
 import BreadCumbsComponent from "./Breadcrumbs/BreadCumbsComponent";
+import SearchFilters from "./SearchFilters/SearchFilters";
+import AllProducts from "./ProductsContainer/AllProducts";
+import PaginationProducts from "./PaginationProducts/PaginationProducts";
 
 export {
   FormInput,
@@ -18,4 +21,7 @@ export {
   ErrorElement,
   Hero,
   BreadCumbsComponent,
+  SearchFilters,
+  AllProducts,
+  PaginationProducts,
 };

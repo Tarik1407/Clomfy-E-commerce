@@ -1,10 +1,23 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import { SearchFilters, PaginationProducts } from "../../components/index";
+
+import { customFetch } from "../../utilis";
+import ProductsContainer from "../../components/ProductsContainer/ProductsContainer";
+
+export const loaderAllProducts = async () => {
+  const response = await customFetch("/products");
+  const meta = response.data.meta;
+  const products = response.data.data;
+  return { products, meta };
+};
 
 const Products = () => {
   return (
     <Box>
-      <Typography variant="p1">Products Page</Typography>
+      <SearchFilters />
+      <ProductsContainer />
+      <PaginationProducts />
     </Box>
   );
 };

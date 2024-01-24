@@ -18,6 +18,7 @@ import React from "react";
 import { ErrorElement } from "./components";
 import { loader } from "./pages/Landing/Landing";
 import { loaderItem } from "../src/pages/SingleProduct/SingleProduct";
+import { loaderAllProducts } from "./pages/Products/Products";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,12 @@ const router = createBrowserRouter([
         errorElement: <ErrorElement />,
         loader: loader,
       },
-      { path: "products", element: <Products /> },
+      {
+        path: "products",
+        element: <Products />,
+        errorElement: <ErrorElement />,
+        loader: loaderAllProducts,
+      },
       {
         path: "products/:id",
         element: <SingleProduct />,
