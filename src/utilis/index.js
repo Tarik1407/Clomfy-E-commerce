@@ -14,7 +14,8 @@ export const formatPrice = (price) => {
   return newNumber;
 };
 
-export const generateAmountOptions = (number) => {
+
+export const generateOptionsAmount = (number) => {
   return Array.from({ length: number }, (_, index) => {
     const amount = index + 1;
 

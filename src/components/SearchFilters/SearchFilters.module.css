@@ -1,0 +1,15 @@
+.formBox{
+  background-color:#f1f5fe;
+  width:100%;
+margin:1rem 0rem !important;
+padding:1rem !important;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-center:center;
+}
+
+.linkBtn{
+  text-decoration: none !important;
+  color: white !important;
+}

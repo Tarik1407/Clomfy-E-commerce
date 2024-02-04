@@ -9,19 +9,23 @@ const FormInput = ({
   defaultValue,
   name,
   required,
+  width,
 }) => {
   return (
-    <TextField
-      label={label}
-      type={type}
-      variant={variant}
-      fullWidth={fullWidth}
-      name={name}
-      sx={{ marginBottom: "2rem" }}
-      defaultValue={defaultValue}
-      required
-    />
+    <>
+      <TextField
+  sx={{ width: `${width}px` }}
+        label={label}
+        type={type}
+        variant={variant}
+        fullWidth={fullWidth}
+        name={name}
+        defaultValue={defaultValue}
+        required={required}
+      />
+    </>
   );
 };
 
 export default FormInput;
+

@@ -10,6 +10,10 @@ import BreadCumbsComponent from "./Breadcrumbs/BreadCumbsComponent";
 import SearchFilters from "./SearchFilters/SearchFilters";
 import AllProducts from "./ProductsContainer/AllProducts";
 import PaginationProducts from "./PaginationProducts/PaginationProducts";
+import ProductNotFound from "./ProductsNotFound/ProductNotFound";
+import FormSelect from "./FormSelect/FormSelect";
+import FormRange from "./FormRange/FormRange";
+import CheckboxInput from "./CheckBoxInput/CheckboxInput";
 
 export {
   FormInput,
@@ -24,4 +28,8 @@ export {
   SearchFilters,
   AllProducts,
   PaginationProducts,
+  ProductNotFound,
+  FormSelect,
+  FormRange,
+  CheckboxInput,
 };

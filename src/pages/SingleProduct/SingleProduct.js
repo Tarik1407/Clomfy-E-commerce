@@ -9,9 +9,10 @@ import {
   Select,
 } from "@mui/material";
 import { useLoaderData } from "react-router-dom";
-import { customFetch, formatPrice, generateAmountOptions } from "../../utilis";
+import { customFetch, formatPrice, generateOptionsAmount } from "../../utilis";
 import styled from "./SingleProduct.module.css";
 import { BreadCumbsComponent } from "../../components";
+
 export const loaderItem = async ({ params }) => {
   const response = await customFetch(`/products/${params.id}`);
   const singleDataItem = response.data.data;
@@ -27,7 +28,7 @@ const SingleProduct = () => {
   const { title, company, description, image, price, colors } =
     singleDataItem.attributes;
 
-  const [productsColor, setProductsColors] = useState(colors[0]);
+  const [productColor, setProductColor] = useState(colors[0]);
 
   return (
     <Grid className={styled.mainBoxSingleProduct} container spacing={4}>
@@ -58,36 +59,32 @@ const SingleProduct = () => {
           Colors
         </Typography>
         <Box sx={{ display: "flex" }}>
-          {colors.map((item) => (
+          {colors.map((color) => (
             <Box
-              key={item}
+              key={color}
               sx={{
-                backgroundColor: item,
-                height: "30px",
-                width: "30px",
+                backgroundColor: color,
+                height: "35px",
+                width: "35px",
                 borderRadius: "50%",
-                marginRight: "0.8rem",
                 cursor: "pointer",
+                margin: "0.2rem",
               }}
-              className={`${item === productsColor ? styled.active : ""}`}
-              onClick={() => setProductsColors(item)}
+              className={`${color === productColor ? styled.active : ""}`}
+              onClick={() => setProductColor(color)}
             />
           ))}
         </Box>
         <Box component="div">
           <FormControl fullWidth sx={{ margin: "1rem 0rem" }}>
-            <InputLabel id="demo-simple-select-label">Amount</InputLabel>
-            <Select
-              id="amount"
-              value={amount}
-              label="amount"
-              onChange={handleChange}
-            >
-              {generateAmountOptions(20)}
+            <Select id="amount" value={amount} onChange={handleChange}>
+              {generateOptionsAmount(15)}
             </Select>
           </FormControl>
         </Box>
-        <Button variant="contained">Add to bag</Button>
+        <Button onClick={() => console.log("Add to bag")} variant="contained">
+          Add to bag
+        </Button>
       </Grid>
     </Grid>
   );

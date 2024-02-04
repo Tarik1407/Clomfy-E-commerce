@@ -7,6 +7,7 @@ import ProductsContainer from "../../components/ProductsContainer/ProductsContai
 
 export const loaderAllProducts = async () => {
   const response = await customFetch("/products");
+  console.log(response);
   const meta = response.data.meta;
   const products = response.data.data;
   return { products, meta };
