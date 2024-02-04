@@ -1,16 +1,29 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import { Navbar, HeaderLoginLayout } from "../../components";
+import { LoadingSpinner } from "../../components";
+import styled from "./HomeLayout.module.css";
 const HomeLayout = () => {
+  const navigation = useNavigation();
+
   return (
-    <Box>
-      <HeaderLoginLayout />
-      <Navbar />
-      <Box sx={{ width: "80%", margin: "auto" }}>
-        <Outlet />
+    <>
+      <Box>
+        <HeaderLoginLayout />
+        <Navbar />
+
+        {navigation.state === "loading" ? (
+          <Box className={styled.boxLoading}>
+            <LoadingSpinner />
+          </Box>
+        ) : (
+          <Box className={styled.outletBox}>
+            <Outlet />
+          </Box>
+        )}
       </Box>
-    </Box>
+    </>
   );
 };
 

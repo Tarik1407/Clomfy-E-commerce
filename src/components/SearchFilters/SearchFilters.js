@@ -4,12 +4,14 @@ import { Grid, Link } from "@mui/material";
 import styled from "./SearchFilters.module.css";
 import { Box, Button } from "@mui/material";
 import { FormInput, FormSelect, FormRange, CheckboxInput } from "../index";
+import { sortArray } from "../../utilis";
 
 const SearchFilters = () => {
-  const { meta } = useLoaderData();
+  const { meta, params } = useLoaderData();
+  const { search, companyValue, categoryValue, order, price, shipping } =
+    params;
   const categories = meta.categories;
   const company = meta.companies;
-  const sortArray = ["a-z", "z-a", "Lowest price", "Highest price"];
 
   return (
     <Form className={styled.formBox}>
@@ -25,30 +27,35 @@ const SearchFilters = () => {
           name="search"
           variant="outlined"
           width={280}
+          defaultValue={search}
         />
         <FormSelect
           label="Category"
           name="category"
           list={categories}
-          defaultValue={categories[0]}
           width={280}
+          defaultValue={categoryValue}
         />
         <FormSelect
           label="Companies"
           name="company"
           list={company}
-          defaultValue={company[0]}
+          defaultValue={companyValue}
           width={280}
         />
         <FormSelect
           label="Sort by"
           name="order"
           list={sortArray}
-          defaultValue={sortArray[0]}
+          defaultValue={order}
           width={280}
         />
-        <FormRange name="price" width={250} size="medium" />
-        <CheckboxInput name="shipping" label="Free shipping" />
+        <FormRange name="price" width={250} size="medium" price={price} />
+        <CheckboxInput
+          defaultValue={shipping}
+          name="shipping"
+          label="Free shipping"
+        />
         <Box>
           <Button
             sx={{ marginRight: "1rem" }}

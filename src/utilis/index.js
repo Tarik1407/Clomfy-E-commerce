@@ -26,3 +26,10 @@ export const generateOptionsAmount = (number) => {
     );
   });
 };
+
+export const sortArray = [
+  "Name A-Z",
+  "Name Z-A",
+  "Lowest price",
+  "Highest price",
+];

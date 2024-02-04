@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Box, Slider, Typography } from "@mui/material";
 import { formatPrice } from "../../utilis";
-const FormRange = ({ name, width, min, size }) => {
+const FormRange = ({ name, width, min, size, defaultValue, price }) => {
   const step = 10000;
   const max = 500000;
-  const [selectedPrice, setSelectedPrice] = useState(max);
+  const [selectedPrice, setSelectedPrice] = useState(price || max);
 
   return (
     <Box>

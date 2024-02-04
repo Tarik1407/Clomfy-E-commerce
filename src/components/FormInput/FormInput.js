@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import { TextField, InputLabel } from "@mui/material";
 
 const FormInput = ({
   label,
@@ -14,7 +14,7 @@ const FormInput = ({
   return (
     <>
       <TextField
-  sx={{ width: `${width}px` }}
+        sx={{ width: `${width}px`, marginTop: "24px" }}
         label={label}
         type={type}
         variant={variant}

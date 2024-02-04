@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "./FormSelect.module.css";
-import { Box, MenuItem, Select } from "@mui/material";
+import { Box, MenuItem, Select, InputLabel } from "@mui/material";
 const FormSelect = ({ label, name, list, defaultValue, width }) => {
   return (
     <Box>
+      <InputLabel>{label}</InputLabel>
       <Select
         sx={{ width: `${width}px` }}
         name={name}

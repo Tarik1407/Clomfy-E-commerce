@@ -1,0 +1,11 @@
+.boxLoading{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.outletBox{
+  width: 80%;
+  margin: auto;
+}
