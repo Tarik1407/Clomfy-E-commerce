@@ -13,6 +13,7 @@ import {
   SingleProduct,
 } from "./pages/index";
 
+ 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import { ErrorElement } from "./components";
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
 
 function App() {
   return <RouterProvider router={router} />;
+
 }
 
 export default App;

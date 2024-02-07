@@ -6,7 +6,10 @@ import NavBarItem from "./NavBarItem";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Link } from "react-router-dom";
 import MuiDrawer from "../Drawer/MuiDrawer";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+  const { numItemsInCart } = useSelector((item) => item.cart);
+
   return (
     <Box className={styled.navbarMainBox}>
       <Box sx={{ display: "flex", margin: { xs: "0rem 2rem" } }}>
@@ -32,7 +35,7 @@ const Navbar = () => {
           <Tooltip title="Cart">
             <Link className={styled.icon} to="/cart">
               <AddShoppingCartIcon />
-              <span className={styled.amountNavbar}>6</span>
+              <span className={styled.amountNavbar}>{numItemsInCart}</span>
             </Link>
           </Tooltip>
         </Box>

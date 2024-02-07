@@ -1,0 +1,12 @@
+.paginationBox{
+  text-align:center;
+  padding:1.4rem 0rem;
+}
+
+.paginationBtnPrev{
+  margin-right:5px !important;
+}
+
+.active{
+  background-color:#9d3bb0 !important;
+}

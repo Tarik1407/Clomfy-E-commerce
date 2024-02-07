@@ -12,7 +12,8 @@ import { useLoaderData } from "react-router-dom";
 import { customFetch, formatPrice, generateOptionsAmount } from "../../utilis";
 import styled from "./SingleProduct.module.css";
 import { BreadCumbsComponent } from "../../components";
-
+import { useDispatch } from "react-redux";
+import { addItem } from "../../features/cart/cartSlice";
 export const loaderItem = async ({ params }) => {
   const response = await customFetch(`/products/${params.id}`);
   const singleDataItem = response.data.data;
@@ -22,13 +23,26 @@ export const loaderItem = async ({ params }) => {
 const SingleProduct = () => {
   const { singleDataItem } = useLoaderData();
   const [amount, setAmount] = useState(1);
+
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     setAmount(event.target.value);
   };
   const { title, company, description, image, price, colors } =
     singleDataItem.attributes;
-
   const [productColor, setProductColor] = useState(colors[0]);
+
+  const cartItemProduct = {
+    cartID: singleDataItem.id + productColor,
+    itemId: singleDataItem.id,
+    title,
+    company,
+    description,
+    image,
+    price,
+    colors,
+    amount,
+  };
 
   return (
     <Grid className={styled.mainBoxSingleProduct} container spacing={4}>
@@ -82,7 +96,10 @@ const SingleProduct = () => {
             </Select>
           </FormControl>
         </Box>
-        <Button onClick={() => console.log("Add to bag")} variant="contained">
+        <Button
+          onClick={() => dispatch(addItem({ product: cartItemProduct }))}
+          variant="contained"
+        >
           Add to bag
         </Button>
       </Grid>

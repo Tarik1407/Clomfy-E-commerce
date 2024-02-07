@@ -10,9 +10,13 @@ const HomeLayout = () => {
   return (
     <>
       <Box>
+        {/* {Login and registration} */}
         <HeaderLoginLayout />
+
+        {/* {Navbar} */}
         <Navbar />
 
+        {/* {Loading and outlet ( all component)} */}
         {navigation.state === "loading" ? (
           <Box className={styled.boxLoading}>
             <LoadingSpinner />
