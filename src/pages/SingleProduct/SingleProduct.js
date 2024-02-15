@@ -42,6 +42,7 @@ const SingleProduct = () => {
     price,
     colors,
     amount,
+    productColor,
   };
 
   return (

@@ -14,6 +14,10 @@ import ProductNotFound from "./ProductsNotFound/ProductNotFound";
 import FormSelect from "./FormSelect/FormSelect";
 import FormRange from "./FormRange/FormRange";
 import CheckboxInput from "./CheckBoxInput/CheckboxInput";
+import CartItemsList from "./CartItemsList/CartItemsList";
+import CartTotals from "./CartTotals/CartTotals";
+import CartItem from "./CartItem/CartItem";
+import SectionTitle from "./SectionTitle/SectionTitle";
 
 export {
   FormInput,
@@ -32,4 +36,8 @@ export {
   FormSelect,
   FormRange,
   CheckboxInput,
+  CartItemsList,
+  CartTotals,
+  CartItem,
+  SectionTitle,
 };

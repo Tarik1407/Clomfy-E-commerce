@@ -1,16 +1,42 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { clearCart } from "../../features/cart/cartSlice";
+import { Box, Grid, Link } from "@mui/material";
+import { useSelector } from "react-redux";
+import {
+  CartItemsList,
+  CartTotals,
+  SectionTitle,
+} from "../../components/index";
+import styled from "./Cart.module.css";
 
 const Cart = () => {
-  const dispatch = useDispatch();
+  const user = true;
+  const { numItemsInCart } = useSelector((item) => item.cart);
+
+  if (numItemsInCart < 1) {
+    return <SectionTitle text=" Sorry, currently items is not in cart" />;
+  }
+
   return (
     <Box>
-      <Typography variant="p1">Cart page</Typography>
-      <Button variant="contained" onClick={() => dispatch(clearCart())}>
-        Clear cart
-      </Button>
+      <SectionTitle text="Shopping cart" />
+      <Grid container>
+        <Grid item lg={8}>
+          <CartItemsList />
+        </Grid>
+
+        <Grid item lg={4}>
+          <CartTotals />
+          {user ? (
+            <Box className={styled.mainBoxCart}>
+              <Link href="/checkout">Proceed to pay</Link>
+            </Box>
+          ) : (
+            <Box className={styled.mainBoxCart}>
+              <Link href="/login">Login</Link>
+            </Box>
+          )}
+        </Grid>
+      </Grid>
     </Box>
   );
 };

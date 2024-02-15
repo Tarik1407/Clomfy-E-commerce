@@ -1,0 +1,28 @@
+.mainItemBoxSeparate{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 2rem;
+    background-color:#f1f5fe;
+    padding:1rem;
+    border-radius:15px
+
+}
+.mainItemBoxSeparate img {
+  width:20%;
+border-radius: 15%;
+    height: 10rem;
+}
+.informationBox p {
+  margin:1.5rem 0rem;
+}
+
+.amountBox{
+  display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+.amountBox select{
+  margin: 1.5rem 0rem;
+}
