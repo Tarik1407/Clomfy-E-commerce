@@ -5,6 +5,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
 
+
 export const navbarItems = [
   {
     id: 1,

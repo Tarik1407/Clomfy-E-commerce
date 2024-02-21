@@ -20,6 +20,7 @@ import { ErrorElement } from "./components";
 import { loader } from "./pages/Landing/Landing";
 import { loaderItem } from "../src/pages/SingleProduct/SingleProduct";
 import { loaderAllProducts } from "./pages/Products/Products";
+import { registerActions } from "./pages/Auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
     errorElement: <Error />,
+    action: registerActions,
   },
 ]);
 

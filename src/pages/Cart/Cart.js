@@ -9,7 +9,7 @@ import {
 import styled from "./Cart.module.css";
 
 const Cart = () => {
-  const user = true;
+  const { user } = useSelector((item) => item.user);
   const { numItemsInCart } = useSelector((item) => item.cart);
 
   if (numItemsInCart < 1) {

@@ -17,3 +17,13 @@
   text-decoration:underline;
 
 }
+.userExist{
+  display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 2rem;
+}
+.userExist p{
+  color:white;
+  margin-right:1rem;
+}

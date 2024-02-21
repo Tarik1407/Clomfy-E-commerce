@@ -1,5 +1,6 @@
 .mainBoxLogin{
-  text-align:center;
+  display: flex;
+  justify-content: center;
 }
 .formBox{
   padding: 4rem 5rem !important;
@@ -8,6 +9,9 @@
     width: 22rem;
     margin-top: 7rem !important;
     text-align: center;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
 }
 
 .registerLink{
