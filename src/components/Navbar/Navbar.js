@@ -28,7 +28,10 @@ return (
       >
         <ul>
           {navbarItems.map((item) => {
-            if (item.href === "/checkout" || (item.href === "/orders" && !user))
+            if (
+              (item.href === "/orders") | (item.href === "/checkout") &&
+              !user
+            )
               return;
             return <NavBarItem key={item.id} {...item} />;
           })}

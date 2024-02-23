@@ -13,15 +13,19 @@ import {
   SingleProduct,
 } from "./pages/index";
 
- 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
+// Error element for all
 import { ErrorElement } from "./components";
+// Loader / Access value in all pages
 import { loader } from "./pages/Landing/Landing";
 import { loaderItem } from "../src/pages/SingleProduct/SingleProduct";
 import { loaderAllProducts } from "./pages/Products/Products";
+// Actions for registration and login
 import { registerActions } from "./pages/Auth/Register";
-
+import { loginAction } from "./pages/Auth/Login";
+// Store
+import { store } from "../src/store/store";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,6 +60,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
     errorElement: <Error />,
+    action: loginAction(store),
   },
   {
     path: "/register",

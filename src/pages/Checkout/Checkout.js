@@ -1,10 +1,25 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
+import { CartTotals, SectionTitle, CheckoutFormPage } from "../../components";
+import { useSelector } from "react-redux";
 
 const Checkout = () => {
+  const { cartItems } = useSelector((item) => item.cart);
+
+  if (cartItems.length < 1) {
+    return <SectionTitle text="Your cary is empty" />;
+  }
   return (
     <Box>
-      <Typography variant="p1">Checkout page</Typography>
+      <SectionTitle text="Place your order" />
+      <Grid container>
+        <Grid item lg={8}>
+          <CheckoutFormPage />
+        </Grid>
+        <Grid item lg={4}>
+          <CartTotals />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

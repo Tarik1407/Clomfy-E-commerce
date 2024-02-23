@@ -7,11 +7,8 @@ import { customFetch } from "../../utilis";
 import { toast } from "react-toastify";
 
 export const registerActions = async ({ request }) => {
-  console.log(request, "requestttt");
   const formData = await request.formData();
-  console.log(formData, "formData");
   const data = Object.fromEntries(formData);
-  console.log(data, "dataa");
 
   try {
     const response = await customFetch.post("/auth/local/register", data);
@@ -21,7 +18,6 @@ export const registerActions = async ({ request }) => {
     const errorMessage =
       error?.response?.data?.error?.message ||
       "please double check your credentials";
-
     toast.error(errorMessage);
     return null;
   }
@@ -40,7 +36,6 @@ const Register = () => {
             type="text"
             variant="outlined"
             fullWidth
-            defaultValue="james2 smith"
             name="username"
             required
           />
@@ -51,7 +46,6 @@ const Register = () => {
             fullWidth
             name="email"
             required
-            defaultValue="james1@gmail.com"
           />
           <FormInput
             label="Password"
@@ -60,7 +54,6 @@ const Register = () => {
             fullWidth
             name="password"
             required
-            defaultValue="secret"
           />
 
           <SubmitBtn

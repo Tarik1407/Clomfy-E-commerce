@@ -1,0 +1,19 @@
+.checkoutFormPageMainBox{
+  display: flex;
+    flex-direction: column
+}
+.checkoutFormPageMainBox p {
+  color: #464862;
+  margin: 1rem 0rem;
+  font-size:1.6rem;
+}
+
+.boxButton{
+  width:500px;
+  text-align:center;
+  margin-top:2rem;
+}
+
+.boxButton button {
+  width:100%;
+}
