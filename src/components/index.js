@@ -19,6 +19,7 @@ import CartTotals from "./CartTotals/CartTotals";
 import CartItem from "./CartItem/CartItem";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import CheckoutFormPage from "./CheckOutFormPage/CheckoutFormPage";
+import OrderList from "./OrderList/OrderList";
 export {
   FormInput,
   SubmitBtn,
@@ -41,4 +42,5 @@ export {
   CartItem,
   SectionTitle,
   CheckoutFormPage,
+  OrderList,
 };

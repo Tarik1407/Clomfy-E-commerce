@@ -1,7 +1,21 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { CartTotals, SectionTitle, CheckoutFormPage } from "../../components";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { redirect } from "react-router-dom";
+
+export const loaderUserCheckout = (store) => () => {
+  const user = store.getState().user.user;
+
+  if (!user) {
+    toast.warning("You must be loggin.");
+    return redirect("/login");
+  }
+
+  return null;
+};
+
 
 const Checkout = () => {
   const { cartItems } = useSelector((item) => item.cart);

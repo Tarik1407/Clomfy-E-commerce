@@ -21,9 +21,12 @@ import { ErrorElement } from "./components";
 import { loader } from "./pages/Landing/Landing";
 import { loaderItem } from "../src/pages/SingleProduct/SingleProduct";
 import { loaderAllProducts } from "./pages/Products/Products";
+import { loaderUserCheckout } from "./pages/Checkout/Checkout";
+import { loaderOrderList } from "./pages/Orders/Orders";
 // Actions for registration and login
 import { registerActions } from "./pages/Auth/Register";
 import { loginAction } from "./pages/Auth/Login";
+import { actionCheckoutOrders } from "./components/CheckOutFormPage/CheckoutFormPage";
 // Store
 import { store } from "../src/store/store";
 const router = createBrowserRouter([
@@ -51,8 +54,13 @@ const router = createBrowserRouter([
         loader: loaderItem,
       },
       { path: "about", element: <About /> },
-      { path: "checkout", element: <Checkout /> },
-      { path: "orders", element: <Orders /> },
+      {
+        path: "checkout",
+        element: <Checkout />,
+        loader: loaderUserCheckout(store),
+        action: actionCheckoutOrders(store),
+      },
+      { path: "orders", element: <Orders />, loader: loaderOrderList(store) },
       { path: "cart", element: <Cart /> },
     ],
   },
