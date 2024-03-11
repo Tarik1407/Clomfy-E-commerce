@@ -29,6 +29,9 @@ import { loginAction } from "./pages/Auth/Login";
 import { actionCheckoutOrders } from "./components/CheckOutFormPage/CheckoutFormPage";
 // Store
 import { store } from "../src/store/store";
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,13 +42,13 @@ const router = createBrowserRouter([
         index: true,
         element: <Landing />,
         errorElement: <ErrorElement />,
-        loader: loader,
+        loader: loader(),
       },
       {
         path: "products",
         element: <Products />,
         errorElement: <ErrorElement />,
-        loader: loaderAllProducts,
+        loader: loaderAllProducts(),
       },
       {
         path: "products/:id",
@@ -60,7 +63,11 @@ const router = createBrowserRouter([
         loader: loaderUserCheckout(store),
         action: actionCheckoutOrders(store),
       },
-      { path: "orders", element: <Orders />, loader: loaderOrderList(store) },
+      {
+        path: "orders",
+        element: <Orders />,
+        loader: loaderOrderList(store),
+      },
       { path: "cart", element: <Cart /> },
     ],
   },
@@ -80,7 +87,6 @@ const router = createBrowserRouter([
 
 function App() {
   return <RouterProvider router={router} />;
-
 }
 
 export default App;
